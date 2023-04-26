@@ -40,7 +40,7 @@ CREATE TABLE IF NOT EXISTS tasks_tags(
 
 
 ALTER TABLE tasks ADD FOREIGN KEY (user_id) REFERENCES users (id);
-ALTER TABLE verifications_email ADD FOREIGN KEY (user_id) REFERENCES users (id);
+--ALTER TABLE verifications_email ADD FOREIGN KEY (user_id) REFERENCES users (id);
 
 ALTER TABLE tasks_tags ADD CONSTRAINT pk_tasks_tags PRIMARY KEY (task_id, tag_id);
 ALTER TABLE tasks_tags ADD FOREIGN KEY (task_id) REFERENCES tasks (id);

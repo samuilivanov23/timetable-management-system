@@ -1,1 +1,11 @@
-/home/samuil/tms_repo/project1/src/main/java/com/tms/spring/project/App.java
+/home/samuil/tms_repo/project1/src/main/java/com/tms/spring/project/controller/HomeController.java
+/home/samuil/tms_repo/project1/src/main/java/com/tms/spring/project/service/IUserService.java
+/home/samuil/tms_repo/project1/src/main/java/com/tms/spring/project/DBManager/DataBaseManager.java
+/home/samuil/tms_repo/project1/src/main/java/com/tms/spring/project/service/UserService.java
+/home/samuil/tms_repo/project1/src/main/java/com/tms/spring/project/repository/EmailRepository.java
+/home/samuil/tms_repo/project1/src/main/java/com/tms/spring/project/controller/UsersController.java
+/home/samuil/tms_repo/project1/src/main/java/com/tms/spring/project/service/IEmailService.java
+/home/samuil/tms_repo/project1/src/main/java/com/tms/spring/project/repository/UserRepository.java
+/home/samuil/tms_repo/project1/src/main/java/com/tms/spring/project/service/EmailService.java
+/home/samuil/tms_repo/project1/src/main/java/com/tms/spring/project/model/User.java
+/home/samuil/tms_repo/project1/src/main/java/com/tms/spring/project/TMSApplication.java

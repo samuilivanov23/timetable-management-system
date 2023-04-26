@@ -1,3 +1,11 @@
 com/tms/spring/project/TMSApplication.class
 com/tms/spring/project/DBManager/DataBaseManager.class
-com/tms/spring/controller/HomeController.class
+com/tms/spring/project/service/IUserService.class
+com/tms/spring/project/repository/UserRepository.class
+com/tms/spring/project/model/User.class
+com/tms/spring/project/repository/EmailRepository.class
+com/tms/spring/project/service/EmailService.class
+com/tms/spring/project/service/IEmailService.class
+com/tms/spring/project/controller/HomeController.class
+com/tms/spring/project/controller/UsersController.class
+com/tms/spring/project/service/UserService.class
