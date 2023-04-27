@@ -13,7 +13,7 @@ import org.springframework.transaction.annotation.Transactional;
 import java.util.List;
 
 @Controller
-public class HomeController 
+public class TimetableController
 {
 	@GetMapping( "/ShowTimetable" )
 	public String Index( Model model )
