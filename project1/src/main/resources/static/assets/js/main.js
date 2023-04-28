@@ -305,7 +305,7 @@
 //		//httpRequest.open('GET', content+'.html');
     	//httpRequest.send();
 
-    	this.modal.getElementsByClassName('cd-schedule-modal__event-info')[0].innerHTML = "Test if this can be dynamic variable description";
+    	this.modal.getElementsByClassName('cd-schedule-modal__event-info')[0].innerHTML = "<div class=\"cd-schedule-modal__event-info\">" + "Test if this can be dynamic variable description" + "</div>";
 	    Util.addClass(this.modal, 'cd-schedule-modal--content-loaded');
 	};
 
