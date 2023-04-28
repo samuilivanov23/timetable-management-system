@@ -305,7 +305,8 @@
 //		//httpRequest.open('GET', content+'.html');
     	//httpRequest.send();
 
-    	this.modal.getElementsByClassName('cd-schedule-modal__event-info')[0].innerHTML = "<div class=\"cd-schedule-modal__event-info\">" + "Test if this can be dynamic variable description" + "</div>";
+		var taskDescription = "Abs Circuit. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit, unde, nulla. Vel unde deleniti, distinctio inventore quis molestiae perferendis, eum quo harum dolorum reiciendis sunt dicta maiores similique! Officiis repellat iure odio debitis enim eius commodi quae deserunt quam assumenda, ab asperiores reiciendis minima maxime odit laborum, libero veniam non?";
+    	this.modal.getElementsByClassName('cd-schedule-modal__event-info')[0].innerHTML = "<div>" + taskDescription + "</div>";
 	    Util.addClass(this.modal, 'cd-schedule-modal--content-loaded');
 	};
 
