@@ -38,7 +38,7 @@ public class TimetableRepository
 				//statement = dbConn.prepareStatement( "SELECT * FROM users as u WHERE u.id=?" );
 				statement = dbConn.prepareStatement( "SELECT * FROM tasks as t where extract(week from t.task_date)=extract(week from ?::date) and extract(dow from t.task_date)=?::int" );	
 				statement.setString( 1, weekAsDate );
-				statement.setInt( 2, i )
+				statement.setInt( 2, i );
 				result = statement.executeQuery();
 				tmpDay = new DayOfWeek();
 

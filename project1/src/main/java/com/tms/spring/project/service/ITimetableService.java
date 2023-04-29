@@ -6,5 +6,5 @@ import java.util.List;
 
 public interface ITimetableService
 {
-	Timetable GetTimetable( string weekAsDate, User ownerOfTasksToShow )
+	Timetable GetTimetable( string weekAsDate, User ownerOfTasksToShow );
 }

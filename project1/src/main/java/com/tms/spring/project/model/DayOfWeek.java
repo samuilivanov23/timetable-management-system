@@ -15,9 +15,9 @@ public class DayOfWeek
 	private String name;
 	private List<Task> tasks;
 
-	public Task() {};
+	public DayOfWeek() {};
 
-	public Task( String name,
+	public DayOfWeek( String name,
 				 List<Task> tasks )
 	{
 		this.name = name;
