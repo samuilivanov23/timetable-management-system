@@ -53,17 +53,5 @@ public class TaskController
 	   	}
 
 		return isTaskCreatedSuccessfully;
-
-		//boolean isEmailSentSuccessfully = false;
-		//try
-		//{
-		//	isEmailSentSuccessfully = userService.RegisterUser( user );
-		//}
-		//catch( Exception exception ) 
-		//{ 
-		//	exception.printStackTrace();
-	   	//}
-//
-		//return isEmailSentSuccessfully;
 	}
 }
