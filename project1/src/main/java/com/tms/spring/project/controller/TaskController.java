@@ -1,6 +1,7 @@
 package com.tms.spring.project.controller;
 
 import com.tms.spring.project.model.User;
+import com.tms.spring.project.controller.HomeController;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -20,7 +21,7 @@ public class TaskController
 	{
 		try
 		{
-			model.addAttribute( "loggedInUser", loggedInUser );
+			model.addAttribute( "loggedInUser", HomeController.loggedInUser );
 		}
 		catch( Exception exception )
 		{
