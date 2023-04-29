@@ -30,7 +30,7 @@ public class TaskRepository
 			transactionStatement.executeUpdate( "BEGIN" );
 
 			//statement = dbConn.prepareStatement( "INSERT INTO users(first_name, last_name, username, email_address, password) values(?, ?, ?, ?, ?) RETURNING id" );
-			statement = dbConn.prepareStatement( "INSERT INTO tasks (user_id, name, description, start_time, end_time, task_date) values(?, ?, ?, ?, ?, ?) RETURNING id" );
+			statement = dbConn.prepareStatement( "INSERT INTO tasks (user_id, name, description, start_time, end_time, task_date) values(?, ?, ?, ?::time, ?::time, ?::date) RETURNING id" );
 			statement.setLong( 1, userId );
 			statement.setString( 2, task.getName() );
 			statement.setString( 3, task.getDescription() );
