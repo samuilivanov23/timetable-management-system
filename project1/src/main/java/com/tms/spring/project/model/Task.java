@@ -118,6 +118,7 @@ public class Task
 	{
 		return "Task[ " + "id:" + this.getId() + 
 						  ", insertedAt:" + this.getInsertedAt() +
+						  ", userId:" + this.getUserId() +
 						  ", name:" + this.getName() +
 						  ", description:" + this.getDescription() +
 						  ", startTime:" + this.getStartTime() + 

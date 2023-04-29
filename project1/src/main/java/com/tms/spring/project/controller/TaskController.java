@@ -36,8 +36,9 @@ public class TaskController
 	@ResponseBody
 	public boolean CreateTaskSubmission( @ModelAttribute Task task )
 	{
-		System.out.println( task );
-		System.out.println( "Debug task form" );
+		System.out.println( task, HomeController.loggedInUser );
+
+
 
 		return true;
 
