@@ -24,9 +24,9 @@ public class Task
 	private boolean isDeleted;
 	private String taskDate;
 
-	public User() {};
+	public Task() {};
 
-	public User( long id, 
+	public Task( long id, 
 				 String insertedAt, 
 				 long userId, 
 				 String name, 
