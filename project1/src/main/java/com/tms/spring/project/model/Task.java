@@ -33,7 +33,7 @@ public class Task
 				 String description,
 				 String startTime, 
 				 String endTime,
-				 boolean taskDate,
+				 boolean isDeleted,
 				 String taskDate )
 	{
 		this.id = id;
@@ -98,19 +98,19 @@ public class Task
 			return false; 
 		}
 
-		final User otherUser = ( User ) obj;
+		final Task otherTask = ( Task ) obj;
 
-		if( !this.username.equals( otherUser.getUsername() ) )
+		if( !this.id.equals( otherTask.getId() ) )
 		{
 			return false;
 		}
 
-		if( !Objects.equals( this.username, otherUser.getUsername() ) )
+		if( !Objects.equals( this.id, otherTask.getId() ) )
 		{
 			return false;
 		}
 
-		return Objects.equals( this.id, otherUser.id );
+		return Objects.equals( this.id, otherTask.id );
 	}
 
 	@Override
