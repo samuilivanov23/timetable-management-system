@@ -50,7 +50,7 @@
 				e.preventDefault();
 				let form_data = $( 'form' ).serializeArray();
 
-		        if( form_data[1]['value'] < form_data[2]['value'] ){
+		        if( form_data[2]['value'] < form_data[3]['value'] ){
 		          $.ajax({
 		            type: $( CreateTaskForm ).attr( 'method' ),
 		            url: [[@{'/CreateTaskAction'}]],
