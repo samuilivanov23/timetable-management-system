@@ -48,10 +48,16 @@
 		        if( form_data[1]['value'] < form_data[2]['value'] ){
 		          $.ajax({
 		            type: $( CreateTaskForm ).attr( 'method' ),
-		            url: [[@{'/CreateTask'}]],
+		            url: [[@{'/CreateTaskAction'}]],
 		            data: form_data,
 		            success: function( response ){
-		              window.location = '/CreateTaskAction';
+		            	if( response ){
+		            		alert( "Successfully created task" );
+		            	}
+		            	else{
+		            		alert( "Could not create task" );
+		            	}
+		             	window.location = "/ShowTimetable";
 		            }
 		          })
 		        }
