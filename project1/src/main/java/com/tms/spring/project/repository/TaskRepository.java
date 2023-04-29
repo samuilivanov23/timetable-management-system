@@ -31,7 +31,7 @@ public class TaskRepository
 
 			//statement = dbConn.prepareStatement( "INSERT INTO users(first_name, last_name, username, email_address, password) values(?, ?, ?, ?, ?) RETURNING id" );
 			statement = dbConn.prepareStatement( "INSERT INTO tasks (user_id, name, description, start_time, end_time, task_date) values(?, ?, ?, ?, ?, ?) RETURNING id" );
-			statement.setString( 1, userId );
+			statement.setBoolean( 1, userId );
 			statement.setString( 2, task.getName() );
 			statement.setString( 3, task.getDescription() );
 			statement.setString( 4, task.getStartTime() );
@@ -42,7 +42,7 @@ public class TaskRepository
 			result.next();
 			userId = result.getLong( 1 );
 
-			if( result.getLong( 1 ) )
+			if( result.getLong( 1 ) > 0 )
 			{
 				isTaskCreatedSuccessfully = true;
 				transactionStatement.executeUpdate( "COMMIT" );
