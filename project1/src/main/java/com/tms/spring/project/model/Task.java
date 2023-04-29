@@ -100,7 +100,7 @@ public class Task
 
 		final Task otherTask = ( Task ) obj;
 
-		if( !this.id.equals( otherTask.getId() ) )
+		if( !this.name.equals( otherTask.getName() ) )
 		{
 			return false;
 		}
@@ -118,7 +118,7 @@ public class Task
 	{
 		return "Task[ " + "id:" + this.getId() + 
 						  ", insertedAt:" + this.getInsertedAt() +
-						  ", name:" + this.getLastName() +
+						  ", name:" + this.getName() +
 						  ", description:" + this.getDescription() +
 						  ", startTime" + this.getStartTime() + 
 						  ", endTime:" + this.getEndTime() +
