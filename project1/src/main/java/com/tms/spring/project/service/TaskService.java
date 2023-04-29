@@ -1,6 +1,7 @@
 package com.tms.spring.project.service;
 
 import com.tms.spring.project.model.Task;
+import com.tms.spring.project.model.User;
 import com.tms.spring.project.repository.TaskRepository;
 import java.util.List;
 import java.util.ArrayList;
