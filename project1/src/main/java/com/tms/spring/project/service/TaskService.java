@@ -1,7 +1,7 @@
 package com.tms.spring.project.service;
 
 import com.tms.spring.project.model.Task;
-import com.tms.spring.project.repository.UserRepository;
+import com.tms.spring.project.repository.TaskRepository;
 import java.util.List;
 import java.util.ArrayList;
 import org.springframework.beans.factory.annotation.Autowired;

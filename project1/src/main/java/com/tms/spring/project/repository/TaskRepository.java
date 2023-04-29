@@ -14,7 +14,7 @@ import com.tms.spring.project.DBManager.DataBaseManager;
 import com.tms.spring.project.service.UserService;
 
 @Repository
-public class UserRepository 
+public class TaskRepository 
 {
 	public boolean CreateTask( Task task, long userId )
 	{
