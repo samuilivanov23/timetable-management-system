@@ -2,6 +2,7 @@ package com.tms.spring.project.controller;
 
 import com.tms.spring.project.model.User;
 import com.tms.spring.project.model.Task;
+import com.tms.spring.project.service.ITaskService;
 import com.tms.spring.project.controller.HomeController;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -17,6 +18,9 @@ import java.util.List;
 @Controller
 public class TaskController
 {
+	@Autowired
+	private ITaskService taskService;
+
 	@GetMapping( "/CreateTaskView" )
 	public String Index( Model model )
 	{
@@ -36,11 +40,19 @@ public class TaskController
 	@ResponseBody
 	public boolean CreateTaskSubmission( @ModelAttribute Task task )
 	{
-		System.out.println( task, HomeController.loggedInUser );
+		System.out.println( task );
 
+		boolean isTaskCreatedSuccessfully = false;
+		try
+		{
+			isTaskCreatedSuccessfully = taskService.CreateTask( task, HomeController.loggedInUser );
+		}
+		catch( Exception exception ) 
+		{ 
+			exception.printStackTrace();
+	   	}
 
-
-		return true;
+		return isTaskCreatedSuccessfully;
 
 		//boolean isEmailSentSuccessfully = false;
 		//try
