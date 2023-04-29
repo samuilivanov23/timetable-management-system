@@ -31,36 +31,54 @@
 	        <input type="end_time" id="end_time" name="end_time">
 	      </div>
 
+	      <div>
+	      	<label for="birthday">Task Date:</label>
+  			<input type="date" id="taskDate" name="taskData">
+	      </div>
+
 	      <input class="button button_style" type="submit" value="Submit" name="Submit"/> <br><br>
 	      <input class="button button_style" type="reset" value="Reset" name="Reset"> <br><br>
 	    </form>
 
 		<script th:inline="javascript">
-			$('#RegisterUserForm').submit( function( e ){
+			$('#CreateTaskForm').submit( function( e ){
 				e.preventDefault();
 				let form_data = $( 'form' ).serializeArray();
-				alert( "Check your email for verification link" );
 
-				if( form_data[4]['value'] === form_data[5]['value'] ){ // password = confirm_password
-					$.ajax({
-						type: $( RegisterUserForm ).attr( 'method' ),
-						url: [[@{'/RegisterUser'}]],
-						data: form_data,
-						success: function( response ){
-							console.log( response );
-							if( response ){
-								alert( "Email Vefification is successfull" );
-							}
-							else{
-								alert( "Email Verification Went Wrong" );
-							}
-							window.location = '/';
-						}
-					})
-				}
-				else{
-					alert( "Passwords does not match!" );
-				}
+		        if( form_data[1]['value'] < form_data[2]['value'] ){
+		          $.ajax({
+		            type: $( CreateTaskForm ).attr( 'method' ),
+		            url: [[@{'/CreateTask'}]],
+		            data: form_data,
+		            success: function( response ){
+		              window.location = '/CreateTaskAction';
+		            }
+		          })
+		        }
+		        else{
+		          alert( "Start time must be earlier than end time!" );
+		        }
+
+				//if( form_data[4]['value'] === form_data[5]['value'] ){ // password = confirm_password
+				//	$.ajax({
+				//		type: $( RegisterUserForm ).attr( 'method' ),
+				//		url: [[@{'/RegisterUser'}]],
+				//		data: form_data,
+				//		success: function( response ){
+				//			console.log( response );
+				//			if( response ){
+				//				alert( "Email Vefification is successfull" );
+				//			}
+				//			else{
+				//				alert( "Email Verification Went Wrong" );
+				//			}
+				//			window.location = '/';
+				//		}
+				//	})
+				//}
+				//else{
+				//	alert( "Passwords does not match!" );
+				//}
 			} )
 		</script>
 	</body>

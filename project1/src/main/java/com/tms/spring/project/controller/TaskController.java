@@ -1,6 +1,7 @@
 package com.tms.spring.project.controller;
 
 import com.tms.spring.project.model.User;
+import com.tms.spring.project.model.Task;
 import com.tms.spring.project.controller.HomeController;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -29,5 +30,24 @@ public class TaskController
 		}
 
 		return "CreateTaskView";
+	}
+
+	@PostMapping( "/CreateTaskAction" )
+	@ResponseBody
+	public boolean CreateTaskSubmission( @ModelAttribute Task task )
+	{
+		System.out.println( task );
+		
+		//boolean isEmailSentSuccessfully = false;
+		//try
+		//{
+		//	isEmailSentSuccessfully = userService.RegisterUser( user );
+		//}
+		//catch( Exception exception ) 
+		//{ 
+		//	exception.printStackTrace();
+	   	//}
+//
+		//return isEmailSentSuccessfully;
 	}
 }
