@@ -15,7 +15,7 @@
 
 		<h2 class="center_text">Register</h2>
 
-		<form action="#" id="CreateTaskForm" th:action="@{/CreateTask}" th:object="${task}" method="post">
+		<form action="#" id="CreateTaskForm" th:action="@{/CreateTaskAction}" th:object="${task}" method="post">
 		  <div class="autocomplete" style="width:300px">
 	        <label for="name">Task Name</label><br>
 	        <input type="text" id="name" name="name"><br><br>
