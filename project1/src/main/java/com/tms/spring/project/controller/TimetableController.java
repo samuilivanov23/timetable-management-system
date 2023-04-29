@@ -18,16 +18,16 @@ public class TimetableController
 	@GetMapping( "/ShowTimetable" )
 	public String Index( Model model )
 	{
-		//try
-		//{
+		try
+		{
 			//List<Item> items = itemService.FindAllItems();  
-			//model.addAttribute( "loggedInUser", loggedInUser );
+			model.addAttribute( "loggedInUser", loggedInUser );
 			//model.addAttribute( "items", items );
-		//}
-		//catch( Exception exception )
-		//{
-		//	exception.printStackTrace();
-		//}
+		}
+		catch( Exception exception )
+		{
+			exception.printStackTrace();
+		}
 
 		return "Timetable";
 	}

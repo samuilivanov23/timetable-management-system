@@ -18,6 +18,15 @@ public class TaskController
 	@GetMapping( "/CreateTaskView" )
 	public String Index( Model model )
 	{
+		try
+		{
+			model.addAttribute( "loggedInUser", loggedInUser );
+		}
+		catch( Exception exception )
+		{
+			exception.printStackTrace();
+		}
+
 		return "CreateTaskView";
 	}
 }
