@@ -120,7 +120,7 @@ public class Task
 						  ", insertedAt:" + this.getInsertedAt() +
 						  ", name:" + this.getName() +
 						  ", description:" + this.getDescription() +
-						  ", startTime" + this.getStartTime() + 
+						  ", startTime:" + this.getStartTime() + 
 						  ", endTime:" + this.getEndTime() +
 						  ", task date:" + this.getTaskDate() +
 						  " ]"; 
