@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Create user</title>
+		<link rel="stylesheet" type="text/css" th:href="@{/styles/style.css}">
+		<link rel="stylesheet" type="text/css" th:href="@{/styles/nav.css}">
+		<meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> 
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+	</head>
+    
+    <body>
+		<div th:replace="fragments/navbar :: navbar"></div>
+
+		<h2 class="center_text">Register</h2>
+
+		<form action="#" id="CreateTaskForm" th:action="@{/CreateTask}" th:object="${task}" method="post">      
+	      <div class="autocomplete" style="width:300px">
+	        <label for="description">Task Description</label><br>
+	        <input type="text" id="description" name="description"><br><br>
+	      </div>
+
+	      <div class="autocomplete" style="width:300px">
+	        <label for="start_time">Start time [ hh:mm ]</label><br>
+	        <input type="start_time" id="start_time" name="start_time">
+	      </div>
+
+	      <div class="autocomplete" style="width:300px">
+	        <label for="end_time">End time [ hh:mm ]</label><br>
+	        <input type="end_time" id="end_time" name="end_time">
+	      </div>
+
+	      <input class="button button_style" type="submit" value="Submit" name="Submit"/> <br><br>
+	      <input class="button button_style" type="reset" value="Reset" name="Reset"> <br><br>
+	    </form>
+
+		<script th:inline="javascript">
+			$('#RegisterUserForm').submit( function( e ){
+				e.preventDefault();
+				let form_data = $( 'form' ).serializeArray();
+				alert( "Check your email for verification link" );
+
+				if( form_data[4]['value'] === form_data[5]['value'] ){ // password = confirm_password
+					$.ajax({
+						type: $( RegisterUserForm ).attr( 'method' ),
+						url: [[@{'/RegisterUser'}]],
+						data: form_data,
+						success: function( response ){
+							console.log( response );
+							if( response ){
+								alert( "Email Vefification is successfull" );
+							}
+							else{
+								alert( "Email Verification Went Wrong" );
+							}
+							window.location = '/';
+						}
+					})
+				}
+				else{
+					alert( "Passwords does not match!" );
+				}
+			} )
+		</script>
+	</body>
+</html>

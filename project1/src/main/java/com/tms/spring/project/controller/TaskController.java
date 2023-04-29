@@ -13,22 +13,11 @@ import org.springframework.transaction.annotation.Transactional;
 import java.util.List;
 
 @Controller
-public class TimetableController
+public class TaskController
 {
-	@GetMapping( "/ShowTimetable" )
+	@GetMapping( "/CreateTaskView" )
 	public String Index( Model model )
 	{
-		//try
-		//{
-			//List<Item> items = itemService.FindAllItems();  
-			//model.addAttribute( "loggedInUser", loggedInUser );
-			//model.addAttribute( "items", items );
-		//}
-		//catch( Exception exception )
-		//{
-		//	exception.printStackTrace();
-		//}
-
-		return "Timetable";
+		return "CreateTaskView";
 	}
 }
