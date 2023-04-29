@@ -37,9 +37,10 @@ public class TaskController
 	public boolean CreateTaskSubmission( @ModelAttribute Task task )
 	{
 		System.out.println( task );
+		System.out.println( "Debug task form" );
 
 		return true;
-				
+
 		//boolean isEmailSentSuccessfully = false;
 		//try
 		//{
