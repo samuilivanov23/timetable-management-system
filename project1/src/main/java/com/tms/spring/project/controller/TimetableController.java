@@ -35,7 +35,7 @@ public class TimetableController
 			}
 
 			model.addAttribute( "loggedInUser", HomeController.loggedInUser );
-			model.addAttribute( "timetable", timetable );
+			model.addAttribute( "timetable", timetable.getDaysOfWeek() );
 		}
 		catch( Exception exception )
 		{

@@ -39,8 +39,24 @@
           <li><span>18:00</span></li>
         </ul>
       </div> <!-- .cd-schedule__timeline -->
+
+      <div th:each="currentDay : ${daysOfWeek}" class="cd-schedule__events">
+        <ul>
+          <li class="cd-schedule__group">
+            <div class="cd-schedule__top-info"><span>[[|${currentDay.name}|]]</span></div>
+
+            <ul th:each="currentTask : $(currentDay.tasks)">
+              <li class="cd-schedule__event">
+                <a th:data-start="${currentTask.startTime}" th:data-end="${currentTask.endTime}" th:data-content="currentTask.description" th:data-event="event-${currentTask.id}" href="#0">
+                  <em class="cd-schedule__name" th:text="{currentTask.name}">Abs Circuit</em>
+                </a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
     
-      <div class="cd-schedule__events">
+      <!--<div class="cd-schedule__events">
         <ul>
           <li class="cd-schedule__group">
             <div class="cd-schedule__top-info"><span>Monday</span></div>
@@ -201,7 +217,7 @@
       </div>
     
       <div class="cd-schedule__cover-layer"></div>
-    </div> <!-- .cd-schedule -->
+    </div> <!-- .cd-schedule --> -->
 
     <script src="assets/js/util.js"></script> <!-- util functions included in the CodyHouse framework -->
     <script src="assets/js/main.js"></script>

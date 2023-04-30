@@ -1,5 +1,4 @@
 (function() {
-	// Schedule Template - by CodyHouse.co
 	function ScheduleTemplate( element ) {
 		this.element = element;
 		this.timelineItems = this.element.getElementsByClassName('cd-schedule__timeline')[0].getElementsByTagName('li');
@@ -289,22 +288,6 @@
 	};
 
 	ScheduleTemplate.prototype.loadEventContent = function(content) {
-		// load the content of an event when user selects it
-		//var self = this;
-//
-//		//httpRequest = new XMLHttpRequest();
-//		//httpRequest.onreadystatechange = function() {
-//		//if (httpRequest.readyState === XMLHttpRequest.DONE) {
-//	    //  if (httpRequest.status === 200) {
-//	    //  	//self.modal.getElementsByClassName('cd-schedule-modal__event-info')[0].innerHTML = self.getEventContent(httpRequest.responseText); 
-//	    //  	self.modal.getElementsByClassName('cd-schedule-modal__event-info')[0].innerHTML = "Test if this can be dynamic variable description";
-//	    //  	Util.addClass(self.modal, 'cd-schedule-modal--content-loaded');
-//	    //  }
-//	    //}
-//		//};
-//		//httpRequest.open('GET', content+'.html');
-    	//httpRequest.send();
-
 		var taskDescription = "Abs Circuit. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit, unde, nulla. Vel unde deleniti, distinctio inventore quis molestiae perferendis, eum quo harum dolorum reiciendis sunt dicta maiores similique! Officiis repellat iure odio debitis enim eius commodi quae deserunt quam assumenda, ab asperiores reiciendis minima maxime odit laborum, libero veniam non?";
     	this.modal.getElementsByClassName('cd-schedule-modal__event-info')[0].innerHTML = "<div>" + taskDescription + "</div>";
 	    Util.addClass(this.modal, 'cd-schedule-modal--content-loaded');
