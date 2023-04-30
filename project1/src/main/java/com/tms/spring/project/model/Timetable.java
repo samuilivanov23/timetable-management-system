@@ -13,7 +13,7 @@ public class Timetable
 {
 	private List<DayOfWeek> daysOfWeek;
 
-	public Timetable() { this.daysOfWeek = new List<DayOfWeek> };
+	public Timetable() { this.daysOfWeek = new List<DayOfWeek>(); };
 
 	public Timetable( List<DayOfWeek> daysOfWeek )
 	{
