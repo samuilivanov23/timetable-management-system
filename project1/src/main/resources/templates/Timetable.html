@@ -47,8 +47,8 @@
 
             <ul th:each="currentTask : ${currentDay.tasks}">
               <li class="cd-schedule__event">
-                <a th:data-start="${currentTask.startTime}" th:data-end="${currentTask.endTime}" th:data-content="${currentTask.description}" th:data-event="${currentTask.id}" href="#0">
-                  <em class="cd-schedule__name" th:text="#{currentTask.name}">Abs Circuit</em>
+                <a th:attr="data-start=#{currentTask.startTime}" th:attr="data-end=#{currentTask.endTime}" th:attr="data-content=#{currentTask.description}" th:attr="data-event=#{currentTask.id}" href="#0">
+                  <em class="cd-schedule__name" th:text="#{currentTask.name}"></em>
                 </a>
               </li>
             </ul>
