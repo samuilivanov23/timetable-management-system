@@ -59,7 +59,7 @@ public class TimetableRepository
 					tmpTask.setTaskDate( result.getString( 9 ) );
 
 					tmpDay.AddTask( tmpTask );
-					tmpDay.setName( daysOfWeekList[i-1] );
+					tmpDay.setName( daysOfWeekList.get(i-1) );
 				}
 
 				timetable.AddDayOfWeek( tmpDay );
