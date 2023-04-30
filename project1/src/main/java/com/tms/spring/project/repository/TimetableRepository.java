@@ -17,9 +17,11 @@ import com.tms.spring.project.service.UserService;
 @Repository
 public class TimetableRepository 
 {
-	public Timetable GetTimetable( string weekAsDate, long userId )
+	public Timetable GetTimetable( String weekAsDate, long userId )
 	{
 		Timetable timetable = new Timetable();
+		DayOfWeek tmpDay = null;
+		Task tmpTask = null;
 		PreparedStatement statement = null;
 		Statement transactionStatement = null;
 		ResultSet result = null;
@@ -57,6 +59,7 @@ public class TimetableRepository
 					tmpTask.setTaskDate( result.getString( 9 ) );
 
 					tmpDay.AddTask( tmpTask );
+					tmpDay.setName( daysOfWeekList[i-1] );
 				}
 
 				timetable.AddDayOfWeek( tmpDay );

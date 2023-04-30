@@ -56,14 +56,14 @@ public class DayOfWeek
 			return false; 
 		}
 
-		final DayOfWeek otherTask = ( DayOfWeek ) obj;
+		final DayOfWeek otherDayOfWeek = ( DayOfWeek ) obj;
 
-		if( !this.name.equals( otherTask.getName() ) )
+		if( !this.name.equals( otherDayOfWeek.getName() ) )
 		{
 			return false;
 		}
 
-		return Objects.equals( this.name, otherTask.getName() );
+		return Objects.equals( this.name, otherDayOfWeek.getName() );
 	}
 
 	@Override

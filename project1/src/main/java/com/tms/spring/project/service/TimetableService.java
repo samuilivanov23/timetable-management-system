@@ -17,7 +17,7 @@ public class TimetableService implements ITimetableService
 	private TimetableRepository timetableRepository;
 
 	@Override
-	public Timetable GetTimetable( string weekAsDate, User ownerOfTasksToShow )
+	public Timetable GetTimetable( String weekAsDate, User ownerOfTasksToShow )
 	{
 		long userId = ownerOfTasksToShow.getId();
 		Timetable timetable = timetableRepository.GetTimetable( weekAsDate, userId );

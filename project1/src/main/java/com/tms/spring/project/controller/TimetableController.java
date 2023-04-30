@@ -1,6 +1,7 @@
 package com.tms.spring.project.controller;
 
 import com.tms.spring.project.model.User;
+import com.tms.spring.project.model.Timetable;
 import com.tms.spring.project.controller.HomeController;
 import com.tms.spring.project.service.ITimetableService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,7 +26,7 @@ public class TimetableController
 	{
 		try
 		{
-			Timetable timetable = timetableService.GetTimetable();
+			Timetable timetable = timetableService.GetTimetable( "2029-04-29", HomeController.loggedInUser );
 			System.out.println(timetable.getDaysOfWeek());
 			System.out.println(timetable.getDaysOfWeek()[0].getName());
 			System.out.println(timetable.getDaysOfWeek()[0].getTasks());

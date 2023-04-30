@@ -49,9 +49,9 @@ public class Timetable
 			return false; 
 		}
 
-		final DayOfWeek otherTask = ( DayOfWeek ) obj;
+		final Timetable otherTimetable = ( Timetable ) obj;
 
-		return Objects.equals( this.daysOfWeek, otherTask.getDaysOfWeek() );
+		return Objects.equals( this.daysOfWeek, otherTimetable.getDaysOfWeek() );
 	}
 
 	@Override
