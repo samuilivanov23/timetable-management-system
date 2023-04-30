@@ -1,6 +1,7 @@
 package com.tms.spring.project.controller;
 
 import com.tms.spring.project.model.User;
+import com.tms.spring.project.model.DayOfWeek;
 import com.tms.spring.project.model.Timetable;
 import com.tms.spring.project.controller.HomeController;
 import com.tms.spring.project.service.ITimetableService;
@@ -28,10 +29,18 @@ public class TimetableController
 		{
 			Timetable timetable = timetableService.GetTimetable( "2029-04-29", HomeController.loggedInUser );
 			System.out.println(timetable.getDaysOfWeek());
+			List<String> daysOfWeekList = List.of( "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday" );
+			int i = 0;
 			for( var currentDay : timetable.getDaysOfWeek() )
 			{
+				if( currentDay == null )
+				{
+					currentDay = new DayOfWeek();
+					currentDay.setName( daysOfWeekList.get(i) );
+				}
 				System.out.println(currentDay.getName());
 				System.out.println(currentDay.getTasks());
+				i++;
 			}
 
 			model.addAttribute( "loggedInUser", HomeController.loggedInUser );
