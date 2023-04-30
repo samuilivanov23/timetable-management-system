@@ -2,18 +2,14 @@ package com.tms.spring.project.model;
 
 import com.tms.spring.project.model.DayOfWeek;
 import java.util.Objects;
-//import javax.persistence.Entity;
-//import javax.persistence.GeneratedValue;
-//import javax.persistence.GenerationType;
-//import javax.persistence.Id;
-//import javax.persistence.Table;
 import java.util.List;
+import java.util.ArrayList;
 
 public class Timetable
 {
 	private List<DayOfWeek> daysOfWeek;
 
-	public Timetable() { this.daysOfWeek = new List<DayOfWeek>(); };
+	public Timetable() { this.daysOfWeek = new ArrayList<DayOfWeek>(); };
 
 	public Timetable( List<DayOfWeek> daysOfWeek )
 	{

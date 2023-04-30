@@ -2,19 +2,15 @@ package com.tms.spring.project.model;
 
 import com.tms.spring.project.model.Task;
 import java.util.Objects;
-//import javax.persistence.Entity;
-//import javax.persistence.GeneratedValue;
-//import javax.persistence.GenerationType;
-//import javax.persistence.Id;
-//import javax.persistence.Table;
 import java.util.List;
+import java.util.ArrayList;
 
 public class DayOfWeek
 {
 	private String name;
 	private List<Task> tasks;
 
-	public DayOfWeek() { this.tasks = new List<Task>(); };
+	public DayOfWeek() { this.tasks = new ArrayList<Task>(); };
 
 	public DayOfWeek( String name,
 				 List<Task> tasks )
