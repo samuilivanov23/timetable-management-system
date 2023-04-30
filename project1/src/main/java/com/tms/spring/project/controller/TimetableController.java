@@ -28,8 +28,8 @@ public class TimetableController
 		{
 			Timetable timetable = timetableService.GetTimetable( "2029-04-29", HomeController.loggedInUser );
 			System.out.println(timetable.getDaysOfWeek());
-			System.out.println(timetable.getDaysOfWeek()[0].getName());
-			System.out.println(timetable.getDaysOfWeek()[0].getTasks());
+			System.out.println(timetable.getDaysOfWeek().get(0).getName());
+			System.out.println(timetable.getDaysOfWeek().get(0).getTasks());
 
 			model.addAttribute( "loggedInUser", HomeController.loggedInUser );
 			model.addAttribute( "timetable", timetable );

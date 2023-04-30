@@ -30,7 +30,7 @@ public class TimetableRepository
 
 		try
 		{
-			if( weekAsDate == null || weekAsDate.isEmpty() || weekAsDate.trim().usEmpty() )
+			if( weekAsDate == null || weekAsDate.isEmpty() || weekAsDate.trim().isEmpty() )
 			{
 				weekAsDate = "now()::date";
 			}
