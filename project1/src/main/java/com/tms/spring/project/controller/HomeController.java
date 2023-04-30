@@ -16,8 +16,6 @@ import java.util.List;
 public class HomeController 
 {
 	@Autowired 
-	//private IItemService itemService;
-
 	public static User loggedInUser = null;
 
 	@GetMapping( "/" )

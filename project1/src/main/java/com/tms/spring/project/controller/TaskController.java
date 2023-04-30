@@ -40,8 +40,6 @@ public class TaskController
 	@ResponseBody
 	public boolean CreateTaskSubmission( @ModelAttribute Task task )
 	{
-		System.out.println( task );
-
 		boolean isTaskCreatedSuccessfully = false;
 		try
 		{
