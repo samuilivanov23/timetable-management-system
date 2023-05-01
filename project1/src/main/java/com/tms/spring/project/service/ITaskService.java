@@ -7,5 +7,5 @@ import java.util.List;
 
 public interface ITaskService
 {
-	boolean CreateTask( Task task, User loggedInUser, List<Tag> tags );
+	boolean CreateTask( Task task, User loggedInUser );
 }
