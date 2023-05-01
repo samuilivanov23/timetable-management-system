@@ -51,7 +51,7 @@ public class TaskController
 		try
 		{
 			System.out.println(task);
-			isTaskCreatedSuccessfully = taskService.CreateTask( task, HomeController.loggedInUser );
+			isTaskCreatedSuccessfully = taskService.CreateTask( task, HomeController.loggedInUser, task.getTags() );
 		}
 		catch( Exception exception ) 
 		{ 

@@ -49,7 +49,7 @@ public class TaskRepository
 				result = statement.executeQuery();
 				result.next();
 				long taskIdInMMTable = result.getLong(1); 
-				long tagIdInMMTable = result.getlong(2);
+				long tagIdInMMTable = result.getLong(2);
 
 				isTagsTasksLinkedCorrectly = (taskIdInMMTable == taskId && tagIdInMMTable == tag.getId());
 
