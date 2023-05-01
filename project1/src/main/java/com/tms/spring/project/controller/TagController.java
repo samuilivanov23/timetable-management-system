@@ -1,9 +1,8 @@
 package com.tms.spring.project.controller;
 
-import com.tms.spring.project.model.User;
+import com.tms.spring.project.model.Tag;
 import com.tms.spring.project.model.Task;
-import com.tms.spring.project.service.ITaskService;
-import com.tms.spring.project.controller.HomeController;
+import com.tms.spring.project.service.ITagService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -16,12 +15,12 @@ import org.springframework.transaction.annotation.Transactional;
 import java.util.List;
 
 @Controller
-public class TaskController
+public class TagController
 {
 	@Autowired
-	private ITaskService taskService;
+	private ITagService tagService;
 
-	@GetMapping( "/CreateTaskView" )
+	@GetMapping( "/CreateTagView" )
 	public String Index( Model model )
 	{
 		try
@@ -33,23 +32,23 @@ public class TaskController
 			exception.printStackTrace();
 		}
 
-		return "CreateTaskView";
+		return "CreateTagView";
 	}
 
-	@PostMapping( "/CreateTaskAction" )
+	@PostMapping( "/CreateTagAction" )
 	@ResponseBody
-	public boolean CreateTaskSubmission( @ModelAttribute Task task )
+	public boolean CreateTagSubmission( @ModelAttribute Tag tag)
 	{
-		boolean isTaskCreatedSuccessfully = false;
+		boolean isTagCreatedSuccessfully = false;
 		try
 		{
-			isTaskCreatedSuccessfully = taskService.CreateTask( task, HomeController.loggedInUser);
+			isTagCreatedSuccessfully = tagService.CreateTag(tag);
 		}
 		catch( Exception exception ) 
 		{ 
 			exception.printStackTrace();
 	   	}
 
-		return isTaskCreatedSuccessfully;
+		return isTagCreatedSuccessfully;
 	}
 }

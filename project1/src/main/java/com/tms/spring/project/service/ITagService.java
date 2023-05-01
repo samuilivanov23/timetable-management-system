@@ -5,7 +5,7 @@ import com.tms.spring.project.model.Task;
 
 public interface ITagService
 {
-	boolean CreateTag( Tag tag, Task task );
+	boolean CreateTag( Tag tag );
     List<Tag> GetAllTags();
     List<Tag> GetTagsForTask( Task task );
 }
