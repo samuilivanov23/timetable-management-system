@@ -45,7 +45,7 @@ public class Tag
 		int hash = 7;
 		hash = 79 * hash + Objects.hashCode( this.id );
         hash = 79 * hash + Objects.hashCode( this.name );
-        hash = 79 * has + Objects.hashCode( this.userId );
+        hash = 79 * hash + Objects.hashCode( this.userId );
         return hash;
 	}
 

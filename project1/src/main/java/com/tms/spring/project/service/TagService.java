@@ -16,9 +16,10 @@ public class TagService implements ITagService
 	private TagRepository tagRepository;
 
 	@Override
-	public boolean CreateTag( Tag tag )
+	public boolean CreateTag( Tag tag,  User loggedInUser )
 	{
-		return tagRepository.CreateTag( tag );
+        long userId = loggedInUser.getId();
+		return tagRepository.CreateTag( tag, userId );
 	}
 
     @Override

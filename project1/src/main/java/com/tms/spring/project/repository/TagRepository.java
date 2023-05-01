@@ -16,7 +16,7 @@ import com.tms.spring.project.service.UserService;
 @Repository
 public class TagRepository 
 {
-	public boolean CreateTag( Tag tag, long taskId )
+	public boolean CreateTag( Tag tag, long userId )
 	{
 		boolean isTagCreatedSuccessfully = false;
 		PreparedStatement statement = null;
@@ -31,7 +31,7 @@ public class TagRepository
 
 			statement = dbConn.prepareStatement( "INSERT INTO tags (name, user_id) VALUES(?, ?) RETURNING id" );
 			statement.setString( 1, tag.getName() );
-            statement.setLong( 2, tag.getUserId() );
+            statement.setLong( 2, userId );
 
 			result = statement.executeQuery();	
 			result.next();
