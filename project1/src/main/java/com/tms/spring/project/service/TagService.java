@@ -32,6 +32,6 @@ public class TagService implements ITagService
     List<Tag> GetTagsForTask(Task task )
     {
         long taskId = task.getId();
-        return tagRepository.GetTagsForTask(taskId)
+        return tagRepository.GetTagsForTask(taskId);
     }
 }

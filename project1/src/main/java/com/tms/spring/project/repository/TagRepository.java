@@ -104,9 +104,7 @@ public class TagRepository
 		
 		try
 		{
-			statement = dbConn.prepareStatement( "SELECT id, name FROM tags AS tg 
-            JOIN tasks_tags AS tt ON tt.tag_id = tg.id 
-            WHERE tt.task_id = ?" );
+			statement = dbConn.prepareStatement( "SELECT id, name FROM tags AS tg JOIN tasks_tags AS tt ON tt.tag_id = tg.id WHERE tt.task_id = ?" );
 
 			statement.setLong( 1, taskId );
 			
