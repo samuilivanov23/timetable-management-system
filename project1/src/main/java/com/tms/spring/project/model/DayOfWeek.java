@@ -64,6 +64,6 @@ public class DayOfWeek
 	@Override
 	public String toString()
 	{
-		return "Task[ " + "name:" + this.getName() + " ]"; 
+		return "DayOfWeek[ " + "name:" + this.getName() + " ]"; 
 	}
 }

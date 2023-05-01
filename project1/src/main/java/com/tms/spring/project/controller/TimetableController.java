@@ -33,9 +33,9 @@ public class TimetableController
 			int i = 0;
 			for( var currentDay : timetable.getDaysOfWeek() )
 			{
-				if( currentDay == null )
+				if( currentDay.getName() == null )
 				{
-					currentDay = new DayOfWeek();
+					//currentDay = new DayOfWeek();
 					currentDay.setName( daysOfWeekList.get(i) );
 				}
 				System.out.println(currentDay.getName());
