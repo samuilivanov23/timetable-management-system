@@ -1,6 +1,7 @@
 package com.tms.spring.project.repository;
 
 import com.tms.spring.project.model.Task;
+import com.tms.spring.project.model.Tag;
 import org.springframework.stereotype.Repository;
 import org.springframework.beans.factory.annotation.Autowired;
 import java.util.List;

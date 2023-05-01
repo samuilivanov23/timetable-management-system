@@ -30,7 +30,7 @@ public class TagRepository
 			transactionStatement.executeUpdate( "BEGIN" );
 
 			statement = dbConn.prepareStatement( "INSERT INTO tags (name) VALUES(?) RETURNING id" );
-			statement.setString( 1, task.getName() );
+			statement.setString( 1, tag.getName() );
 
 			result = statement.executeQuery();	
 			result.next();

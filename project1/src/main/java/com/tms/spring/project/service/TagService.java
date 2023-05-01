@@ -23,13 +23,13 @@ public class TagService implements ITagService
 	}
 
     @Override
-    List<Tag> GetAllTags()
+    public List<Tag> GetAllTags()
     {
         return tagRepository.GetAllTags();
     }
 
     @Override
-    List<Tag> GetTagsForTask(Task task )
+    public List<Tag> GetTagsForTask( Task task )
     {
         long taskId = task.getId();
         return tagRepository.GetTagsForTask(taskId);
