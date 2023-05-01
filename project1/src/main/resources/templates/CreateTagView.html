@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>Create tag</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/styles/style.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/styles/nav.css}">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+</head>
+
+<body>
+    <div th:replace="fragments/navbar :: navbar"></div>
+
+    <h2 class="center_text">Create a custom tag</h2>
+
+    <form action="#" id="CreateTagForm" th:action="@{/CreateTagAction}" th:object="${tag}" method="post">
+        <div class="autocomplete" style="width:300px">
+            <label for="name">Tag Name</label><br>
+            <input type="text" id="name" name="name"><br><br>
+        </div>
+
+        <input class="button button_style" type="submit" value="Submit" name="Submit" /> <br><br>
+        <input class="button button_style" type="reset" value="Reset" name="Reset"> <br><br>
+    </form>
+
+    <script th:inline="javascript">
+        $('#CreateTaskForm').submit(function (e) {
+            e.preventDefault();
+            let form_data = $('form').serializeArray();
+
+            $.ajax({
+                type: $(CreateTagForm).attr('method'),
+                url: [[@{ '/CreateTagAction'}]],
+            data: form_data,
+                success: function(response) {
+                    if (response) {
+                        alert("Successfully created tag");
+                    }
+                    else {
+                        alert("Could not create tag");
+                    }
+                    window.location = "/ShowTimetable";
+                }
+        })
+			} )
+    </script>
+</body>
+
+</html>
