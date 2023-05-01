@@ -17,9 +17,9 @@ public class TaskService implements ITaskService
 	private TaskRepository taskRepository;
 
 	@Override
-	public boolean CreateTask( Task task, User loggedInUser, List<Tag> tags )
+	public boolean CreateTask( Task task, User loggedInUser )
 	{
 		long userId = loggedInUser.getId();
-		return taskRepository.CreateTask( task, userId, tags );
+		return taskRepository.CreateTask( task, userId );
 	}
 }

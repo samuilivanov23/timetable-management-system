@@ -31,7 +31,7 @@ public class TagRepository
 
 			statement = dbConn.prepareStatement( "INSERT INTO tags (name, user_id) VALUES(?, ?) RETURNING id" );
 			statement.setString( 1, tag.getName() );
-            statement.setString( 2, tag.getUserId() );
+            statement.setLong( 2, tag.getUserId() );
 
 			result = statement.executeQuery();	
 			result.next();
@@ -79,7 +79,7 @@ public class TagRepository
 				tmpTag = new Tag();
 				tmpTag.setId( result.getLong( 1 ) );
 				tmpTag.setName( result.getString( 2 ) );
-                tmpTag.setUserId( result.getString(3) );
+                tmpTag.setUserId( result.getLong(3) );
 
 				tags.add( tmpTag );
 			}
@@ -118,7 +118,7 @@ public class TagRepository
 				tmpTag = new Tag();
 				tmpTag.setId( result.getLong( 1 ) );
 				tmpTag.setName( result.getString( 2 ) );
-                tmpTag.setUserId( result.getString(3) )
+                tmpTag.setUserId( result.getLong(3) );
 
 				tags.add( tmpTag );
 			}
