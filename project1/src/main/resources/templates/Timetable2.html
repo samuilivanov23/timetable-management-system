@@ -40,13 +40,13 @@
         </ul>
       </div> <!-- .cd-schedule__timeline -->
 
-      <div th:each="currentDay : ${daysOfWeek}" class="cd-schedule__events">
+      <div class="cd-schedule__events">
         <ul>
-          <li class="cd-schedule__group">
+          <li th:each="currentDay : ${daysOfWeek}" class="cd-schedule__group">
             <div class="cd-schedule__top-info"><span>[[|${currentDay.name}|]]</span></div>
 
-            <ul th:each="currentTask : ${currentDay.tasks}">
-              <li class="cd-schedule__event">
+            <ul>
+              <li th:each="currentTask : ${currentDay.tasks}" class="cd-schedule__event">
                 <a th:attr="data-start=${currentTask.startTime},data-end=${currentTask.endTime},data-content=${currentTask.description},data-event=${currentTask.id}" href="#0">
                   <em class="cd-schedule__name" th:text="${currentTask.name}"></em>
                 </a>
