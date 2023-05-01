@@ -1,75 +1,83 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
-    <head>
-        <title>Create user</title>
-		<link rel="stylesheet" type="text/css" th:href="@{/styles/style.css}">
-		<link rel="stylesheet" type="text/css" th:href="@{/styles/nav.css}">
-		<meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> 
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
-	</head>
-    
-    <body>
-		<div th:replace="fragments/navbar :: navbar"></div>
 
-		<h2 class="center_text">Register</h2>
+<head>
+	<title>Create user</title>
+	<link rel="stylesheet" type="text/css" th:href="@{/styles/style.css}">
+	<link rel="stylesheet" type="text/css" th:href="@{/styles/nav.css}">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+</head>
 
-		<form action="#" id="CreateTaskForm" th:action="@{/CreateTaskAction}" th:object="${task}" method="post">
-		  <div class="autocomplete" style="width:300px">
-	        <label for="name">Task Name</label><br>
-	        <input type="text" id="name" name="name"><br><br>
-	      </div>
+<body>
+	<div th:replace="fragments/navbar :: navbar"></div>
 
-	      <div class="autocomplete" style="width:300px">
-	        <label for="description">Task Description</label><br>
-	        <input type="text" id="description" name="description"><br><br>
-	      </div>
+	<h2 class="center_text">Register</h2>
 
-	      <div class="autocomplete" style="width:300px">
-	        <label for="startTime">Start time [ hh:mm ]</label><br>
-	        <input type="startTime" id="startTime" name="startTime">
-	      </div>
+	<form action="#" id="CreateTaskForm" th:action="@{/CreateTaskAction}" th:object="${task}" method="post">
+		<div class="autocomplete" style="width:300px">
+			<label for="name">Task Name</label><br>
+			<input type="text" id="name" name="name"><br><br>
+		</div>
 
-	      <div class="autocomplete" style="width:300px">
-	        <label for="endTime">End time [ hh:mm ]</label><br>
-	        <input type="endTime" id="endTime" name="endTime">
-	      </div>
+		<div class="autocomplete" style="width:300px">
+			<label for="description">Task Description</label><br>
+			<input type="text" id="description" name="description"><br><br>
+		</div>
 
-	      <div>
-	      	<label for="taskDate">Task Date:</label>
-  			<input type="date" id="taskDate" name="taskDate">
-	      </div>
+		<div class="autocomplete" style="width:300px">
+			<label for="startTime">Start time [ hh:mm ]</label><br>
+			<input type="startTime" id="startTime" name="startTime">
+		</div>
 
-	      <input class="button button_style" type="submit" value="Submit" name="Submit"/> <br><br>
-	      <input class="button button_style" type="reset" value="Reset" name="Reset"> <br><br>
-	    </form>
+		<div class="autocomplete" style="width:300px">
+			<label for="endTime">End time [ hh:mm ]</label><br>
+			<input type="endTime" id="endTime" name="endTime">
+		</div>
 
-		<script th:inline="javascript">
-			$('#CreateTaskForm').submit( function( e ){
-				e.preventDefault();
-				let form_data = $( 'form' ).serializeArray();
+		<div>
+			<label for="taskDate">Task Date:</label>
+			<input type="date" id="taskDate" name="taskDate">
+		</div>
 
-		        if( form_data[2]['value'] < form_data[3]['value'] ){
-		          $.ajax({
-		            type: $( CreateTaskForm ).attr( 'method' ),
-		            url: [[@{'/CreateTaskAction'}]],
-		            data: form_data,
-		            success: function( response ){
-		            	if( response ){
-		            		alert( "Successfully created task" );
-		            	}
-		            	else{
-		            		alert( "Could not create task" );
-		            	}
-		             	window.location = "/ShowTimetable";
-		            }
-		          })
+		<div class="form-group has-feedback">
+			<select th:field="*{tags}" class="form-control" multiple id="tags" name="tags">
+				<option th:each="t : ${allTags}" th:value="${t.id}" th:text="${t.name}" />
+			</select>
+		</div>
+
+		<input class="button button_style" type="submit" value="Submit" name="Submit" /> <br><br>
+		<input class="button button_style" type="reset" value="Reset" name="Reset"> <br><br>
+	</form>
+
+	<script th:inline="javascript">
+		$('#CreateTaskForm').submit(function (e) {
+			e.preventDefault();
+			let form_data = $('form').serializeArray();
+
+			if (form_data[2]['value'] < form_data[3]['value']) {
+				$.ajax({
+					type: $(CreateTaskForm).attr('method'),
+					url: [[@{ '/CreateTaskAction'}]],
+				data: form_data,
+					success: function(response) {
+						if (response) {
+							alert("Successfully created task");
+						}
+						else {
+							alert("Could not create task");
+						}
+						window.location = "/ShowTimetable";
+					}
+			})
 		        }
-		        else{
-		          alert( "Start time must be earlier than end time!" );
-		        }
+		        else {
+			alert("Start time must be earlier than end time!");
+		}
 			} )
-		</script>
-	</body>
+	</script>
+</body>
+
 </html>

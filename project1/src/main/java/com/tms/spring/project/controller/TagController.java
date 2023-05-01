@@ -2,9 +2,7 @@ package com.tms.spring.project.controller;
 
 import com.tms.spring.project.model.User;
 import com.tms.spring.project.model.Task;
-import com.tms.spring.project.model.Tag;
 import com.tms.spring.project.service.ITaskService;
-import com.tms.spring.project.service.ITagService;
 import com.tms.spring.project.controller.HomeController;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -22,18 +20,13 @@ public class TaskController
 {
 	@Autowired
 	private ITaskService taskService;
-	
-	@Autowired
-	private ITagService tagService;
 
 	@GetMapping( "/CreateTaskView" )
 	public String Index( Model model )
 	{
 		try
 		{
-			List<Tag> allTags = tagService.GetAllTags();
 			model.addAttribute( "loggedInUser", HomeController.loggedInUser );
-			model.addAttribute( "allAvailableTags", allTags );
 		}
 		catch( Exception exception )
 		{
@@ -50,8 +43,8 @@ public class TaskController
 		boolean isTaskCreatedSuccessfully = false;
 		try
 		{
-			System.out.println(task);
 			isTaskCreatedSuccessfully = taskService.CreateTask( task, HomeController.loggedInUser );
+			isTaskCreatedSuccessfully = tagService
 		}
 		catch( Exception exception ) 
 		{ 
