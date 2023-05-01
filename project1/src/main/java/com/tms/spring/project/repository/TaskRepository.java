@@ -48,10 +48,10 @@ public class TaskRepository
 
 				result = statement.executeQuery();
 				result.next();
-				long taskIdInMMTable = result.getLong(1) 
-				long tagIdInMMTable = result.getlong(2)
+				long taskIdInMMTable = result.getLong(1); 
+				long tagIdInMMTable = result.getlong(2);
 
-				isTagsTasksLinkedCorrectly = (taskIdInMMTable == taskId && tagIdInMMTable == tag.getId())
+				isTagsTasksLinkedCorrectly = (taskIdInMMTable == taskId && tagIdInMMTable == tag.getId());
 
 				if(!isTagsTasksLinkedCorrectly) break;
 				
