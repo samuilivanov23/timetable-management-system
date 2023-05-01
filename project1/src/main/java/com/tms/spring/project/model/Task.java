@@ -1,6 +1,8 @@
 package com.tms.spring.project.model;
 
 import java.util.Objects;
+import java.util.List;
+import java.util.ArrayList;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -79,7 +81,7 @@ public class Task
 	public String getTaskDate() { return this.taskDate; }
 	public void setTaskDate( String taskDate ) { this.taskDate = taskDate; }
 
-	public List<Tga> getTags() { return this.tags; }
+	public List<Tag> getTags() { return this.tags; }
 	public void setTags( List<Tag> tags ) { this.tags = tags; }
 
 	@Override

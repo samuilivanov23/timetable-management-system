@@ -34,9 +34,9 @@ public class TagRepository
 
 			result = statement.executeQuery();	
 			result.next();
-			taskName = result.getLong( 1 );
+			long tagId = result.getLong( 1 );
 
-			if( taskName != null && !taskName.trim().isEmpty())
+			if( tagId > 0 )
 			{
 				isTagCreatedSuccessfully = true;
 				transactionStatement.executeUpdate( "COMMIT" );
@@ -98,7 +98,7 @@ public class TagRepository
 	{
 		List<Tag> tags = null;
         Tag tmpTag = null;
-		Statement statement = null;
+		PreparedStatement statement = null;
 		ResultSet result = null;
 		Connection dbConn = DataBaseManager.ConnectToDatabase();
 		
