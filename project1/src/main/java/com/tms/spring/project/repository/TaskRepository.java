@@ -15,7 +15,7 @@ import com.tms.spring.project.service.UserService;
 @Repository
 public class TaskRepository 
 {
-	public boolean CreateTask( Task task, long userId )
+	public boolean CreateTask( Task task, long userId, List<Tag> tags )
 	{
 		boolean isTaskCreatedSuccessfully = false;
 		PreparedStatement statement = null;
@@ -36,11 +36,29 @@ public class TaskRepository
 			statement.setString( 5, task.getEndTime() );
 			statement.setString( 6, task.getTaskDate() );
 			
-			result = statement.executeQuery();	
+			result = statement.executeQuery();
 			result.next();
-			userId = result.getLong( 1 );
+			long taskId = result.getLong( 1 );
 
-			if( result.getLong( 1 ) > 0 )
+			boolean isTagsTasksLinkedCorrectly = true;
+			for(var tag: tags){
+				statement = dbConn.prepareStatement( "INSERT INTO tasks_tags (task_id, tag_id) VALUES(?, ?) RETURNING task_id, tag_id" );
+				statement.setLong( 1, taskId );
+				statement.setLong( 2, tag.getId() );
+
+				result = statement.executeQuery();
+				result.next();
+				long taskIdInMMTable = result.getLong(1) 
+				long tagIdInMMTable = result.getlong(2)
+
+				isTagsTasksLinkedCorrectly = (taskIdInMMTable == taskId && tagIdInMMTable == tag.getId())
+
+				if(!isTagsTasksLinkedCorrectly) break;
+				
+			}
+		
+
+			if( taskId > 0 && isTagsTasksLinkedCorrectly)
 			{
 				isTaskCreatedSuccessfully = true;
 				transactionStatement.executeUpdate( "COMMIT" );
