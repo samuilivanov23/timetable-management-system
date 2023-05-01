@@ -29,7 +29,7 @@ public class TimetableController
 		{
 			Timetable timetable = timetableService.GetTimetable( "2029-04-29", HomeController.loggedInUser );
 			System.out.println(timetable.getDaysOfWeek());
-			List<String> daysOfWeekList = List.of( "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday" );
+			List<String> daysOfWeekList = List.of( "Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday" );
 			int i = 0;
 			for( var currentDay : timetable.getDaysOfWeek() )
 			{

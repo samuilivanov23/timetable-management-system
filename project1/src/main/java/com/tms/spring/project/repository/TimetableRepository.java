@@ -26,7 +26,7 @@ public class TimetableRepository
 		Statement transactionStatement = null;
 		ResultSet result = null;
 		Connection dbConn = DataBaseManager.ConnectToDatabase();
-		List<String> daysOfWeekList = List.of( "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday" );
+		List<String> daysOfWeekList = List.of( "Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday" );
 
 		try
 		{
@@ -35,8 +35,9 @@ public class TimetableRepository
 				weekAsDate = "now()::date";
 			}
 
-			for( int i = 1; i <= 7; i++ )
+			for( int i = 0; i <= 6; i++ )
 			{
+
 				statement = dbConn.prepareStatement( "SELECT * FROM tasks as t where extract(week from t.task_date)=extract(week from ?::date) and extract(dow from t.task_date)=?::int" );	
 				statement.setString( 1, weekAsDate );
 				statement.setInt( 2, i );
