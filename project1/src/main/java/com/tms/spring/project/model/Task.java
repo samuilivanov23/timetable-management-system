@@ -25,11 +25,8 @@ public class Task
 	private String endTime;
 	private boolean isDeleted;
 	private String taskDate;
-	private List<Tag> tags;
 
-	public Task() {
-		this.tags = new ArrayList<Tag>();
-	};
+	public Task() { }
 
 	public Task( long id, 
 				 String insertedAt, 
@@ -39,8 +36,7 @@ public class Task
 				 String startTime, 
 				 String endTime,
 				 boolean isDeleted,
-				 String taskDate,
-				 List<Tag> tags )
+				 String taskDate )
 	{
 		this.id = id;
 		this.insertedAt = insertedAt;
@@ -51,7 +47,6 @@ public class Task
 		this.endTime = endTime;
 		this.isDeleted = false;
 		this.taskDate = taskDate;
-		this.tags = tags;
 	}
 
 	public long getId() { return this.id; }
@@ -81,8 +76,6 @@ public class Task
 	public String getTaskDate() { return this.taskDate; }
 	public void setTaskDate( String taskDate ) { this.taskDate = taskDate; }
 
-	public List<Tag> getTags() { return this.tags; }
-	public void setTags( List<Tag> tags ) { this.tags = tags; }
 
 	@Override
 	public int hashCode() 
@@ -134,7 +127,6 @@ public class Task
 						  ", startTime:" + this.getStartTime() + 
 						  ", endTime:" + this.getEndTime() +
 						  ", task date:" + this.getTaskDate() +
-						  ", tags: [ " + this.getTags() + " ]" +
 						  " ]"; 
 	}
 }
