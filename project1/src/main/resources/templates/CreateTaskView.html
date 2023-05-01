@@ -42,12 +42,6 @@
 			<input type="date" id="taskDate" name="taskDate">
 		</div>
 
-		<div class="form-group has-feedback">
-			<select th:field="*{tags}" class="form-control" multiple id="tags" name="tags">
-				<option th:each="t : ${allTags}" th:value="${t.id}" th:text="${t.name}" />
-			</select>
-		</div>
-
 		<input class="button button_style" type="submit" value="Submit" name="Submit" /> <br><br>
 		<input class="button button_style" type="reset" value="Reset" name="Reset"> <br><br>
 	</form>
