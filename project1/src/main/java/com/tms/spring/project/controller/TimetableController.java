@@ -51,6 +51,6 @@ public class TimetableController
 			exception.printStackTrace();
 		}
 
-		return "Timetable";
+		return "Timetable2";
 	}
 }
